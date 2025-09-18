@@ -3,77 +3,70 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
-const courses = [
-  {
-    id: 1,
-    title: "Основы машинного обучения",
-    description: "Изучите принципы ML, алгоритмы и практическое применение искусственного интеллекта",
-    duration: "8 недель",
-    level: "Начальный",
-    price: "15 000 ₽",
-    image: "/img/8873a108-b4d7-41c5-96d7-1dddf8580bf9.jpg",
-    features: ["Теория и практика", "Проекты в портфолио", "Сертификат"]
-  },
-  {
-    id: 2,
-    title: "Нейронные сети и Deep Learning",
-    description: "Глубокое погружение в нейронные сети, их архитектуру и современные подходы",
-    duration: "12 недель",
-    level: "Продвинутый",
-    price: "25 000 ₽",
-    image: "/img/4809f851-d29a-407b-9ba9-765bc173f533.jpg",
-    features: ["PyTorch и TensorFlow", "Computer Vision", "NLP проекты"]
-  },
-  {
-    id: 3,
-    title: "ИИ для бизнеса",
-    description: "Практическое применение искусственного интеллекта в бизнес-процессах",
-    duration: "6 недель",
-    level: "Средний",
-    price: "18 000 ₽",
-    image: "/img/2ba294a1-6982-4593-9d9a-bbe57ac02904.jpg",
-    features: ["Кейсы из практики", "ROI анализ", "Стратегии внедрения"]
-  }
-];
+const course = {
+  id: 1,
+  title: "Полный курс по ИИ: 10 направлений",
+  description: "Комплексное обучение работе с искусственным интеллектом — от основ до продвинутых техник. 10 различных направлений в одном курсе за символическую цену",
+  duration: "3 месяца",
+  level: "Все уровни",
+  price: "1 000 ₽",
+  oldPrice: "25 000 ₽",
+  image: "/img/8873a108-b4d7-41c5-96d7-1dddf8580bf9.jpg",
+  modules: [
+    "ChatGPT и текстовые ИИ",
+    "Midjourney и генерация изображений", 
+    "Обработка видео с ИИ",
+    "Голосовые ассистенты",
+    "Автоматизация бизнес-процессов",
+    "ИИ в маркетинге и продажах",
+    "Анализ данных с помощью ИИ",
+    "Создание чат-ботов",
+    "ИИ для контента и копирайтинга",
+    "Будущие тренды и возможности"
+  ]
+};
 
 const pricingPlans = [
   {
-    name: "Базовый",
-    price: "15 000 ₽",
+    name: "Базовый доступ",
+    price: "1 000 ₽",
     period: "курс",
-    description: "Один курс по выбору",
+    description: "Полный курс со всеми материалами",
     features: [
-      "Доступ к материалам курса",
+      "Все 10 модулей курса",
       "Практические задания",
-      "Сертификат о прохождении",
-      "Поддержка в чате"
-    ],
-    popular: false
-  },
-  {
-    name: "Профессиональный",
-    price: "35 000 ₽",
-    period: "3 курса",
-    description: "Полная программа обучения",
-    features: [
-      "Все 3 курса",
-      "Личный ментор",
-      "Карьерная поддержка",
-      "Помощь с портфолио",
-      "Доступ к закрытому сообществу"
+      "Видеоуроки в HD качестве",
+      "Поддержка в чате",
+      "Сертификат о прохождении"
     ],
     popular: true
+  },
+  {
+    name: "Премиум",
+    price: "2 500 ₽",
+    period: "курс + бонусы",
+    description: "Курс + дополнительные материалы",
+    features: [
+      "Все из базового тарифа",
+      "Личные консультации с экспертом",
+      "Дополнительные кейсы",
+      "Готовые шаблоны и промпты",
+      "Доступ к закрытому сообществу",
+      "Пожизненные обновления"
+    ],
+    popular: false
   },
   {
     name: "Корпоративный",
     price: "По запросу",
     period: "команда",
-    description: "Обучение для команд",
+    description: "Обучение для команд от 5 человек",
     features: [
       "Индивидуальная программа",
       "Корпоративные проекты",
       "Онбординг сотрудников",
-      "Техническая поддержка 24/7"
+      "Техническая поддержка 24/7",
+      "Скидка от 30%"
     ],
     popular: false
   }
@@ -173,57 +166,74 @@ export default function Index() {
             <Badge variant="outline" className="mb-4 border-primary-200 text-primary-600">
               📚 Наши курсы
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Выберите свой путь в ИИ</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Мега-курс по ИИ</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              От базовых принципов до продвинутых техник — найдите курс, который подходит именно вам
+              10 различных направлений искусственного интеллекта в одном курсе всего за 1000 рублей
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {courses.map((course, index) => (
-              <Card key={course.id} className="group hover:shadow-xl transition-all duration-300 animate-scale-in border-0 shadow-lg" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={course.image} 
-                    alt={course.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-white/90 text-gray-700">
-                      {course.level}
-                    </Badge>
-                  </div>
+          <div className="max-w-4xl mx-auto">
+            <Card className="group hover:shadow-2xl transition-all duration-300 animate-scale-in border-0 shadow-xl overflow-hidden">
+              <div className="relative">
+                <img 
+                  src={course.image} 
+                  alt={course.title}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-red-500 text-white text-sm px-3 py-1">
+                    🔥 Супер предложение
+                  </Badge>
                 </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
+                <div className="absolute top-4 right-4">
+                  <Badge variant="secondary" className="bg-white/90 text-gray-700">
+                    {course.level}
+                  </Badge>
+                </div>
+              </div>
+              
+              <div className="p-8">
+                <div className="text-center mb-6">
+                  <div className="flex items-center justify-center gap-4 mb-4">
                     <Badge variant="outline" className="text-primary-600 border-primary-200">
                       <Icon name="Clock" size={14} className="mr-1" />
                       {course.duration}
                     </Badge>
-                    <span className="text-2xl font-bold text-primary-600">{course.price}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-3xl font-bold text-red-600">{course.price}</span>
+                      <span className="text-lg text-gray-500 line-through">{course.oldPrice}</span>
+                      <Badge className="bg-green-500 text-white">-96%</Badge>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl group-hover:text-primary-600 transition-colors">
+                  
+                  <CardTitle className="text-3xl group-hover:text-primary-600 transition-colors mb-4">
                     {course.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardDescription className="text-gray-600 leading-relaxed text-lg">
                     {course.description}
                   </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 mb-6">
-                    {course.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-600">
-                        <Icon name="Check" size={16} className="text-green-500 mr-2 flex-shrink-0" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-gradient-primary hover:opacity-90 text-white border-0">
-                    Записаться на курс
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  {course.modules.map((module, idx) => (
+                    <div key={idx} className="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg">
+                      <Icon name="CheckCircle" size={16} className="text-green-500 mr-3 flex-shrink-0" />
+                      <span className="font-medium">{module}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="text-center">
+                  <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0 text-xl px-12 py-4">
+                    <Icon name="Rocket" size={24} className="mr-2" />
+                    Купить курс за 1 000 ₽
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
+                  <p className="text-sm text-gray-500 mt-3">
+                    ⏰ Акция действует ограниченное время
+                  </p>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -235,9 +245,9 @@ export default function Index() {
             <Badge variant="outline" className="mb-4 border-primary-200 text-primary-600">
               💰 Тарифы
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Выгодные цены на обучение</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Доступные тарифы</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Выберите тариф, который подходит вашим целям и бюджету
+              Выберите подходящий вариант для изучения ИИ
             </p>
           </div>
 
