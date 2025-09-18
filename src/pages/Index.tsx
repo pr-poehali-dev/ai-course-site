@@ -1,299 +1,360 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 
-const course = {
-  id: 1,
-  title: "Полный курс по ИИ: 10 направлений",
-  description: "Комплексное обучение работе с искусственным интеллектом — от основ до продвинутых техник. 10 различных направлений в одном курсе за символическую цену",
-  duration: "3 месяца",
-  level: "Все уровни",
-  price: "1 000 ₽",
-  oldPrice: "25 000 ₽",
-  image: "/img/8873a108-b4d7-41c5-96d7-1dddf8580bf9.jpg",
-  modules: [
-    "ChatGPT и текстовые ИИ",
-    "Midjourney и генерация изображений", 
-    "Обработка видео с ИИ",
-    "Голосовые ассистенты",
-    "Автоматизация бизнес-процессов",
-    "ИИ в маркетинге и продажах",
-    "Анализ данных с помощью ИИ",
-    "Создание чат-ботов",
-    "ИИ для контента и копирайтинга",
-    "Будущие тренды и возможности"
-  ]
-};
+const Index = () => {
+  // Данные курса
+  const courseData = {
+    title: "Полный курс по Искусственному Интеллекту",
+    subtitle: "Освойте ИИ за 3 месяца и получите востребованную профессию",
+    description: "Комплексное обучение работе с ИИ — от основ до продвинутых техник. Изучите ChatGPT, Midjourney, автоматизацию и создание собственных ИИ-решений",
+    price: "2 990 ₽",
+    oldPrice: "24 990 ₽",
+    discount: "88%",
+    modules: [
+      {
+        title: "ChatGPT и текстовые ИИ",
+        description: "Мастерство промптинга, создание контента, автоматизация задач",
+        icon: "MessageSquare"
+      },
+      {
+        title: "Midjourney и генерация изображений",
+        description: "Создание визуального контента, продвинутые техники генерации",
+        icon: "Image"
+      },
+      {
+        title: "Обработка видео с ИИ",
+        description: "Монтаж, создание видео, анимация с помощью нейросетей",
+        icon: "Video"
+      },
+      {
+        title: "Голосовые ассистенты",
+        description: "Создание голосовых помощников, клонирование голоса",
+        icon: "Mic"
+      },
+      {
+        title: "Автоматизация бизнес-процессов",
+        description: "Внедрение ИИ в рабочие процессы, повышение эффективности",
+        icon: "Zap"
+      },
+      {
+        title: "ИИ в маркетинге",
+        description: "Создание рекламы, анализ аудитории, персонализация",
+        icon: "Target"
+      },
+      {
+        title: "Анализ данных с ИИ",
+        description: "Обработка больших данных, прогнозирование, инсайты",
+        icon: "BarChart3"
+      },
+      {
+        title: "Создание чат-ботов",
+        description: "Разработка умных помощников для бизнеса",
+        icon: "Bot"
+      }
+    ]
+  };
 
-const pricingPlans = [
-  {
-    name: "Базовый доступ",
-    price: "1 000 ₽",
-    period: "курс",
-    description: "Полный курс со всеми материалами",
-    features: [
-      "Все 10 модулей курса",
-      "Практические задания",
-      "Видеоуроки в HD качестве",
-      "Поддержка в чате",
-      "Сертификат о прохождении"
-    ],
-    popular: true
-  },
-  {
-    name: "Премиум",
-    price: "2 500 ₽",
-    period: "курс + бонусы",
-    description: "Курс + дополнительные материалы",
-    features: [
-      "Все из базового тарифа",
-      "Личные консультации с экспертом",
-      "Дополнительные кейсы",
-      "Готовые шаблоны и промпты",
-      "Доступ к закрытому сообществу",
-      "Пожизненные обновления"
-    ],
-    popular: false
-  },
-  {
-    name: "Корпоративный",
-    price: "По запросу",
-    period: "команда",
-    description: "Обучение для команд от 5 человек",
-    features: [
-      "Индивидуальная программа",
-      "Корпоративные проекты",
-      "Онбординг сотрудников",
-      "Техническая поддержка 24/7",
-      "Скидка от 30%"
-    ],
-    popular: false
-  }
-];
+  // Отзывы
+  const testimonials = [
+    {
+      name: "Анна Петрова",
+      role: "Маркетолог",
+      avatar: "/img/avatar1.jpg",
+      text: "Курс полностью изменил мой подход к работе. Теперь я автоматизировала 80% рутинных задач с помощью ИИ. Окупился за первый месяц!",
+      rating: 5
+    },
+    {
+      name: "Михаил Смирнов",
+      role: "Предприниматель", 
+      avatar: "/img/avatar2.jpg",
+      text: "Благодаря курсу запустил ИИ-сервис, который приносит 300к+ в месяц. Знания действительно применимы на практике.",
+      rating: 5
+    },
+    {
+      name: "Елена Козлова",
+      role: "Дизайнер",
+      avatar: "/img/avatar3.jpg", 
+      text: "Освоила Midjourney и другие ИИ-инструменты. Увеличила скорость работы в 5 раз, клиенты в восторге от результатов!",
+      rating: 5
+    }
+  ];
 
-export default function Index() {
+  // Тарифные планы
+  const pricingPlans = [
+    {
+      name: "Базовый",
+      price: "2 990 ₽",
+      oldPrice: "9 990 ₽",
+      description: "Полный доступ к курсу",
+      features: [
+        "Все 8 модулей курса",
+        "Практические задания",
+        "Сертификат о прохождении", 
+        "Доступ на 12 месяцев",
+        "Поддержка в чате"
+      ],
+      popular: false
+    },
+    {
+      name: "Премиум",
+      price: "4 990 ₽", 
+      oldPrice: "19 990 ₽",
+      description: "Курс + личное сопровождение",
+      features: [
+        "Все из базового тарифа",
+        "Личные консультации с экспертом",
+        "Готовые шаблоны и промпты",
+        "Разбор ваших проектов",
+        "Помощь с трудоустройством",
+        "Доступ к закрытому сообществу"
+      ],
+      popular: true
+    },
+    {
+      name: "VIP",
+      price: "9 990 ₽",
+      oldPrice: "39 990 ₽", 
+      description: "Максимальный результат",
+      features: [
+        "Все из премиум тарифа",
+        "Индивидуальная программа обучения",
+        "Еженедельные созвоны 1-на-1",
+        "Создание вашего ИИ-продукта",
+        "Пожизненный доступ",
+        "Гарантия результата или возврат денег"
+      ],
+      popular: false
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <Icon name="Brain" size={20} className="text-white" />
-              </div>
-              <h1 className="text-xl font-bold text-gray-900">AI Courses</h1>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#hero" className="text-gray-600 hover:text-primary-600 transition-colors">Главная</a>
-              <a href="#courses" className="text-gray-600 hover:text-primary-600 transition-colors">Курсы</a>
-              <a href="#pricing" className="text-gray-600 hover:text-primary-600 transition-colors">Цены</a>
-            </div>
-            <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
-              Начать обучение
-            </Button>
-          </nav>
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Icon name="Brain" size={32} className="text-blue-600" />
+            <span className="text-xl font-bold text-gray-900">AI Academy</span>
+          </div>
+          <div className="hidden md:flex items-center space-x-6">
+            <a href="#course" className="text-gray-600 hover:text-blue-600 transition-colors">О курсе</a>
+            <a href="#pricing" className="text-gray-600 hover:text-blue-600 transition-colors">Цены</a>
+            <a href="#reviews" className="text-gray-600 hover:text-blue-600 transition-colors">Отзывы</a>
+            <Button className="bg-blue-600 hover:bg-blue-700">Записаться</Button>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <Badge variant="outline" className="mb-6 border-primary-200 text-primary-600">
-              🚀 Новая эра обучения
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="/img/61f6d81a-486c-43c5-9521-3caec05a0297.jpg" 
+            alt="AI Technology Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <Badge className="mb-6 bg-red-500 text-white text-sm px-4 py-2">
+            🔥 Акция до 31 декабря
+          </Badge>
+          
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Освойте{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Искусственный Интеллект
+            </span>{" "}
+            за 3 месяца
+          </h1>
+          
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Практический курс для тех, кто хочет освоить ИИ-инструменты и увеличить свой доход. 
+            Изучите ChatGPT, Midjourney, автоматизацию и создание ИИ-решений
+          </p>
+
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600">{courseData.price}</div>
+              <div className="text-lg text-gray-500 line-through">{courseData.oldPrice}</div>
+            </div>
+            <Badge className="bg-green-500 text-white text-lg px-3 py-1">
+              -{courseData.discount}
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Мадина, я тебя люблю! Освойте{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                искусственный интеллект
-              </span>{" "}
-              с нуля
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Практические курсы от экспертов индустрии. Изучайте машинное обучение, 
-              нейронные сети и применяйте ИИ в реальных проектах
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0 text-lg px-8">
-                <Icon name="Play" size={20} className="mr-2" />
-                Начать обучение
-              </Button>
-              <Button size="lg" variant="outline" className="border-gray-300 text-lg px-8">
-                <Icon name="BookOpen" size={20} className="mr-2" />
-                Посмотреть программу
-              </Button>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
+              <Icon name="Play" size={20} className="mr-2" />
+              Купить курс сейчас
+            </Button>
+            <Button size="lg" variant="outline" className="border-gray-300 text-lg px-8 py-4">
+              <Icon name="Eye" size={20} className="mr-2" />
+              Посмотреть программу
+            </Button>
+          </div>
+
+          <div className="flex items-center justify-center gap-8 text-sm text-gray-600">
+            <div className="flex items-center">
+              <Icon name="Users" size={16} className="mr-1" />
+              5000+ студентов
+            </div>
+            <div className="flex items-center">
+              <Icon name="Star" size={16} className="mr-1" />
+              4.9/5 рейтинг
+            </div>
+            <div className="flex items-center">
+              <Icon name="Award" size={16} className="mr-1" />
+              Сертификат
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center animate-slide-up">
-              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="Zap" size={32} className="text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Практический подход</h3>
-              <p className="text-gray-600">Реальные проекты и кейсы из индустрии для максимального погружения</p>
-            </div>
-            <div className="text-center animate-slide-up" style={{animationDelay: '0.1s'}}>
-              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="Users" size={32} className="text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Экспертные менторы</h3>
-              <p className="text-gray-600">Личная поддержка от практикующих специалистов в области ИИ</p>
-            </div>
-            <div className="text-center animate-slide-up" style={{animationDelay: '0.2s'}}>
-              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="Award" size={32} className="text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Карьерный рост</h3>
-              <p className="text-gray-600">Помощь в трудоустройстве и развитии карьеры в сфере ИИ</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Courses Section */}
-      <section id="courses" className="py-20">
+      {/* Course Modules */}
+      <section id="course" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-primary-200 text-primary-600">
-              📚 Наши курсы
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Мега-курс по ИИ</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Программа курса</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              10 различных направлений искусственного интеллекта в одном курсе всего за 1000 рублей
+              8 практических модулей, которые дадут вам полное понимание ИИ-инструментов
             </p>
           </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <Card className="group hover:shadow-2xl transition-all duration-300 animate-scale-in border-0 shadow-xl overflow-hidden">
-              <div className="relative">
-                <img 
-                  src={course.image} 
-                  alt={course.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-red-500 text-white text-sm px-3 py-1">
-                    🔥 Супер предложение
-                  </Badge>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <Badge variant="secondary" className="bg-white/90 text-gray-700">
-                    {course.level}
-                  </Badge>
-                </div>
-              </div>
-              
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <div className="flex items-center justify-center gap-4 mb-4">
-                    <Badge variant="outline" className="text-primary-600 border-primary-200">
-                      <Icon name="Clock" size={14} className="mr-1" />
-                      {course.duration}
-                    </Badge>
-                    <div className="flex items-center gap-2">
-                      <span className="text-3xl font-bold text-red-600">{course.price}</span>
-                      <span className="text-lg text-gray-500 line-through">{course.oldPrice}</span>
-                      <Badge className="bg-green-500 text-white">-96%</Badge>
-                    </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {courseData.modules.map((module, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name={module.icon} size={24} className="text-blue-600" />
                   </div>
-                  
-                  <CardTitle className="text-3xl group-hover:text-primary-600 transition-colors mb-4">
-                    {course.title}
+                  <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
+                    {module.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed text-lg">
-                    {course.description}
+                  <CardDescription className="text-gray-600 leading-relaxed">
+                    {module.description}
                   </CardDescription>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  {course.modules.map((module, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg">
-                      <Icon name="CheckCircle" size={16} className="text-green-500 mr-3 flex-shrink-0" />
-                      <span className="font-medium">{module}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="text-center">
-                  <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0 text-xl px-12 py-4">
-                    <Icon name="Rocket" size={24} className="mr-2" />
-                    Купить курс за 1 000 ₽
-                  </Button>
-                  <p className="text-sm text-gray-500 mt-3">
-                    ⏰ Акция действует ограниченное время
-                  </p>
-                </div>
-              </div>
-            </Card>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Benefits */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Почему выбирают наш курс</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Rocket" size={32} className="text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Быстрый результат</h3>
+              <p className="text-gray-600">Первые навыки за неделю, применение в работе за месяц</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="DollarSign" size={32} className="text-green-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Увеличение дохода</h3>
+              <p className="text-gray-600">Студенты увеличивают доход в среднем на 150%</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="Users" size={32} className="text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Поддержка</h3>
+              <p className="text-gray-600">Активное комьюнити и помощь экспертов 24/7</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="reviews" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Отзывы студентов</h2>
+            <p className="text-xl text-gray-600">Что говорят те, кто уже прошел курс</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                      <Icon name="User" size={24} className="text-gray-600" />
+                    </div>
+                    <div>
+                      <div className="font-bold">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600">{testimonial.role}</div>
+                    </div>
+                  </div>
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Icon key={i} name="Star" size={16} className="text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 italic">"{testimonial.text}"</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
       <section id="pricing" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-primary-200 text-primary-600">
-              💰 Тарифы
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Доступные тарифы</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Выберите тариф</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Выберите подходящий вариант для изучения ИИ
+              Разные варианты обучения под ваши цели и бюджет
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pricingPlans.map((plan, index) => (
-              <Card 
-                key={plan.name} 
-                className={`relative group hover:shadow-xl transition-all duration-300 animate-scale-in ${
-                  plan.popular ? 'ring-2 ring-primary-500 scale-105' : ''
-                }`}
-                style={{animationDelay: `${index * 0.1}s`}}
-              >
+              <Card key={index} className={`relative border-0 shadow-xl ${plan.popular ? 'ring-2 ring-blue-500 scale-105' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-gradient-primary text-white px-4 py-1">
+                    <Badge className="bg-blue-600 text-white px-4 py-1">
                       Популярный
                     </Badge>
                   </div>
                 )}
+                
                 <CardHeader className="text-center">
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                    {plan.period !== "команда" && (
-                      <span className="text-gray-600 ml-2">/ {plan.period}</span>
-                    )}
+                  <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold text-blue-600">{plan.price}</div>
+                    <div className="text-lg text-gray-500 line-through">{plan.oldPrice}</div>
                   </div>
-                  <CardDescription className="mt-2">{plan.description}</CardDescription>
+                  <CardDescription>{plan.description}</CardDescription>
                 </CardHeader>
+                
                 <CardContent>
-                  <ul className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-6">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-600">
-                        <Icon name="Check" size={16} className="text-green-500 mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
+                      <div key={idx} className="flex items-start">
+                        <Icon name="Check" size={16} className="text-green-500 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </div>
                     ))}
-                  </ul>
-                  <Button 
-                    className={`w-full ${
-                      plan.popular 
-                        ? 'bg-gradient-primary hover:opacity-90 text-white border-0' 
-                        : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    {plan.name === "Корпоративный" ? "Связаться с нами" : "Выбрать тариф"}
+                  </div>
+                  
+                  <Button className={`w-full ${plan.popular ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-600 hover:bg-gray-700'}`}>
+                    Выбрать тариф
                   </Button>
                 </CardContent>
               </Card>
@@ -302,95 +363,92 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto animate-fade-in">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Готовы начать карьеру в ИИ?
-            </h2>
-            <p className="text-xl text-primary-100 mb-8">
-              Присоединяйтесь к тысячам студентов, которые уже изменили свою жизнь с помощью наших курсов
+      {/* Contact Form */}
+      <section className="py-20 bg-blue-600">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center text-white">
+            <h2 className="text-4xl font-bold mb-4">Остались вопросы?</h2>
+            <p className="text-xl mb-8 opacity-90">
+              Напишите нам, и мы поможем выбрать подходящий тариф
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 text-lg px-8">
-                <Icon name="Rocket" size={20} className="mr-2" />
-                Начать обучение сейчас
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-600 text-lg px-8">
-                <Icon name="MessageCircle" size={20} className="mr-2" />
-                Задать вопрос
-              </Button>
-            </div>
+            
+            <Card className="bg-white">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <Input placeholder="Ваше имя" className="border-gray-300" />
+                  <Input placeholder="Email" type="email" className="border-gray-300" />
+                </div>
+                <Textarea 
+                  placeholder="Ваш вопрос" 
+                  className="mb-4 border-gray-300" 
+                  rows={4}
+                />
+                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Icon name="Send" size={16} className="mr-2" />
+                  Отправить сообщение
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <Icon name="Brain" size={20} className="text-white" />
-                </div>
-                <h3 className="text-xl font-bold">AI Courses</h3>
+                <Icon name="Brain" size={32} className="text-blue-400" />
+                <span className="text-xl font-bold">AI Academy</span>
               </div>
-              <p className="text-gray-400 mb-4">
-                Образовательная платформа нового поколения для изучения искусственного интеллекта
+              <p className="text-gray-400">
+                Лучшие курсы по искусственному интеллекту для начинающих и профессионалов
               </p>
-              <div className="flex space-x-4">
-                <Button size="sm" variant="ghost" className="text-gray-400 hover:text-white p-2">
-                  <Icon name="Twitter" size={20} />
-                </Button>
-                <Button size="sm" variant="ghost" className="text-gray-400 hover:text-white p-2">
-                  <Icon name="Linkedin" size={20} />
-                </Button>
-                <Button size="sm" variant="ghost" className="text-gray-400 hover:text-white p-2">
-                  <Icon name="Github" size={20} />
-                </Button>
-              </div>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Курсы</h4>
+              <h3 className="font-bold mb-4">Курсы</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Машинное обучение</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Нейронные сети</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">ИИ для бизнеса</a></li>
+                <li>ChatGPT</li>
+                <li>Midjourney</li>
+                <li>Автоматизация</li>
+                <li>Аналитика</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Поддержка</h4>
+              <h3 className="font-bold mb-4">Поддержка</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Центр помощи</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Связаться с нами</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+                <li>Помощь</li>
+                <li>FAQ</li>
+                <li>Контакты</li>
+                <li>Сообщество</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Контакты</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center">
+              <h3 className="font-bold mb-4">Контакты</h3>
+              <div className="space-y-2 text-gray-400">
+                <div className="flex items-center">
                   <Icon name="Mail" size={16} className="mr-2" />
-                  hello@aicourses.ru
-                </li>
-                <li className="flex items-center">
+                  info@ai-academy.ru
+                </div>
+                <div className="flex items-center">
                   <Icon name="Phone" size={16} className="mr-2" />
-                  +7 (495) 123-45-67
-                </li>
-              </ul>
+                  +7 (999) 123-45-67
+                </div>
+              </div>
             </div>
           </div>
           
           <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-            <p>&copy; 2024 AI Courses. Все права защищены.</p>
+            <p>&copy; 2024 AI Academy. Все права защищены.</p>
           </div>
         </div>
       </footer>
     </div>
   );
-}
+};
+
+export default Index;
