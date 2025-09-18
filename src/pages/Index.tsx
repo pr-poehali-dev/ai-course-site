@@ -106,7 +106,7 @@ export default function Index() {
               🚀 Новая эра обучения
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Освойте{" "}
+              Мадина, я тебя люблю! Освойте{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 искусственный интеллект
               </span>{" "}
